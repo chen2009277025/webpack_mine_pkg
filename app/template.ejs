@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>
+    <%= htmlWebpackPlugin.options.title%>
+  </title>
+</head>
+
+<body>
+  <div class="header"></div>
+  <div class="page-sidebar"></div>
+  <div id="main-container" style="margin-left:223px; margin-top:60px; padding:0"></div>
+
+  <script src="//cdn.bootcss.com/jquery/2.2.2/jquery.min.js"></script>
+  <% if (htmlWebpackPlugin.options.extra&&htmlWebpackPlugin.options.extra.js) {%>
+    <% for(var i = 0;i < htmlWebpackPlugin.options.extra.js.length;i++){ %>
+      <script src="<%= htmlWebpackPlugin.options.extra.js[i] %>"></script>
+    <% } %>
+  <% } %>
+</body>
+
+</html>
